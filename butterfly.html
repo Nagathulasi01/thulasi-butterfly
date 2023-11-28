@@ -1,0 +1,66 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Butterfly</title>
+	<style>
+		.butterfly {
+			width: 0;
+			height: 0;
+			border-top: 50px solid transparent;
+			border-bottom: 50px solid transparent;
+			border-right: 100px solid #38ACEC;
+			border-radius: 50%;
+			position: relative;
+			animation: fly 5s infinite linear;
+		}
+		.butterfly::before {
+			content: "";
+			position: absolute;
+			top: -50px;
+			left: -100px;
+			width: 0;
+			height: 0;
+			border-top: 50px solid transparent;
+			border-bottom: 50px solid transparent;
+			border-right: 100px solid #38ACEC;
+			border-radius: 50%;
+			transform: rotate(-60deg);
+		}
+		.butterfly::after {
+			content: "";
+			position: absolute;
+			top: -50px;
+			left: 100px;
+			width: 0;
+			height: 0;
+			border-top: 50px solid transparent;
+			border-bottom: 50px solid transparent;
+			border-left: 100px solid #38ACEC;
+			border-radius: 50%;
+			transform: rotate(60deg);
+		}
+		@keyframes fly {
+			0% {
+				transform: translateX(0) translateY(0) rotate(0);
+			}
+			25% {
+				transform: translateX(100px) translateY(-50px) rotate(90deg);
+			}
+			50% {
+				transform: translateX(200px) translateY(0) rotate(180deg);
+			}
+			75% {
+				transform: translateX(100px) translateY(50px) rotate(270deg);
+			}
+			100% {
+				transform: translateX(0) translateY(0) rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="butterfly"></div>
+</body>
+</html>
